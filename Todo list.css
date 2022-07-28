@@ -64,6 +64,7 @@ input[type="text"] {
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 50%);
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 425px) {
@@ -75,4 +76,16 @@ input[type="text"] {
   input[type="text"] {
     font-size: 10px;
   }
+  #error {
+    font-size: 12px;
+  }
+}
+
+#error {
+    display: none;
+    width: 100%;
+    text-align: center;
+    color: #D1512D;
+    margin: 10px 0;
+    font-weight: 600;
 }
