@@ -1,26 +1,29 @@
-let txtInput = document.getElementById("inputbox");
+let myForm = document.getElementById("myForm");
+let data = document.getElementById("inputbox");
+let myList = document.getElementById("mylist");
 
-const add = () => {
-    let userInput = txtInput.value;
-    if(userInput == '')
-    {
-        document.getElementById('error').style.display = 'block'
-    }
-    else {
-        document.getElementById('error').style.display = 'none'
-        document.getElementById('head').innerHTML = userInput
-        console.log(userInput);
-       
-    }
+myForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  add(data.value);
+});
 
-};
-
-document.getElementById("addbtn").addEventListener("click", add);
-
-const inputData = (e) => {
-  if (e.keyCode === 13) {
-    add();
+const add = (inputdata) => {
+  if (inputdata == " ") {
+    document.getElementById("error").style.display = "block";
+  } else {
+    let temp = `<li class='list' id='list'><input type='checkbox' id='chkbox' class='chkbox' onclick='check(this)'>${inputdata}<img src="delete.png" alt="" class='imgdel' onclick="del(this)"  tooltip='Delete this item'></li>`;
+    myList.insertAdjacentHTML("beforebegin", temp);
+    data.value = "";
+    data.focus();
   }
 };
 
-document.getElementById("inputbox").addEventListener("keyup", inputData);
+const del = (de) => {
+  de.parentElement.remove();
+};
+
+const check = (e) => {
+  if (e.this.checked) {
+    document.getElementById("list").style.textDecoration = "line-through";
+  } else document.getElementById("list").style.textDecoration = "";
+};

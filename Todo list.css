@@ -82,10 +82,61 @@ input[type="text"] {
 }
 
 #error {
-    display: none;
-    width: 100%;
-    text-align: center;
-    color: #D1512D;
-    margin: 10px 0;
-    font-weight: 600;
+  position: absolute;
+  display: none;
+  width: 100%;
+  text-align: center;
+  color: #d1512d;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.data {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+#head {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addlist {
+  position: relative;
+  width: 60%;
+  margin: auto;
+  padding-left: 50px;
+}
+
+.list {
+  justify-content: space-around;
+  list-style-type: none;
+  margin-top: 20px;
+  font-size: 28px;
+  position: relative;
+}
+
+.chkbox {
+  width: 16px;
+  height: 16px;
+  margin-right: 25px;
+}
+
+.imgdel {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  margin-bottom: -10px;
+  margin-right: 50%;
+  float: right;
+}
+
+.inputdata {
+  width: 100px;
+  height: 100px;
+}
+
+ul li .chkbox:checked {
+  text-decoration: line-through;
 }
