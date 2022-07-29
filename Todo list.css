@@ -79,6 +79,9 @@ input[type="text"] {
   #error {
     font-size: 12px;
   }
+  .list {
+    font-size: 14px;
+  }
 }
 
 #error {
@@ -137,6 +140,9 @@ input[type="text"] {
   height: 100px;
 }
 
-ul li .chkbox:checked {
-  text-decoration: line-through;
+if(.mylist,.list input[type='checkbox']:checked){
+  .text {
+    text-decoration: line-through;
+  }
+  
 }
