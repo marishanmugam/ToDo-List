@@ -14,7 +14,7 @@ const add = (inputdata) => {
     return
   } else {
     document.getElementById("error").style.display = "none";
-    let temp = `<li class='list' id='list'><input type='checkbox' id='chkbox' class='chkbox' onchange='check(this)'>${inputdata}<img src="delete.png" alt="" class='imgdel' onclick="del(this)"  tooltip='Delete this item'></li>`;
+    let temp = ` <li class="list" id="list"><input type='checkbox' id='chkbox' class='chkbox' onchange='check(this)'><label id='inputlabel'>${inputdata}</label><img src="delete.png" alt="" class='imgdel' onclick="del(this)"  tooltip='Delete this item'></li>`;
     myList.insertAdjacentHTML("beforebegin", temp);
     data.value = "";
     data.focus();
@@ -25,11 +25,18 @@ const del = (de) => {
   de.parentElement.remove();
 };
 
-// const check = (e) => {
-//   if (e.this.checked) {
-//     document.getElementById("list").style.textDecoration = "line-through";
-//   } else document.getElementById("list").style.textDecoration = "";
-// };
+const check = (e) => {
+  if (e.checked) {
+     document.querySelector("li > label ").style.textDecoration = "line-through";
+     document.getElementById("inputlabel").style.color = "#2B7A0B";
+  } 
+  else {
+    document.querySelector("label").style.textDecoration = "none";
+    document.getElementById("inputlabel").style.color = "";
+
+    
+  }
+};
 
 let li = document.querySelector('#mylist').child;
 console.log(li)
